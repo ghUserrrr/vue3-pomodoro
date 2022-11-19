@@ -142,6 +142,9 @@ export default {
             timerStore,
         };
     },
+    created() {
+        this.timerStore.stopTimer();
+    },
     mounted() {
         if (
             this.timerStore.time.currentMinutes +
@@ -153,11 +156,11 @@ export default {
     },
     methods: {
         playTimer() {
-            const timerSound = new Audio("./audio/timer-btn.mp3");
+            const timerSound = new Audio("audio/timer-btn.mp3");
             timerSound.play();
         },
         playTimerEnding() {
-            const timerSoundEnding = new Audio("./audio/timer-alarm.mp3");
+            const timerSoundEnding = new Audio("audio/timer-alarm.mp3");
             timerSoundEnding.play();
         },
     },
@@ -295,6 +298,12 @@ export default {
     background-color: white;
     transition: color 0.5s ease-in-out 0s;
     cursor: pointer;
+
+    @media (max-width: 576px) {
+        width: 120px;
+        margin-left: calc(50% - 60px);
+        margin-right: 30px;
+    }
 }
 
 .timer__btn-start {

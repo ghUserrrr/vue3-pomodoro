@@ -51,7 +51,6 @@ export default {
             deep: true,
             handler() {
                 this.setTimeFor();
-                console.log(54);
             },
         },
         "timerStore.toDo.isTaskActive": {
